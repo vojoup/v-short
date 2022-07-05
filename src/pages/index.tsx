@@ -5,8 +5,6 @@ import { ChangeEventHandler } from "react";
 import { trpc } from "../utils/trpc";
 
 const Home: NextPage = () => {
-  // const hello = trpc.useQuery(["example.hello", { text: "from tRPC" }]);
-
   const crerateSlugMutation = trpc.useMutation(["shortLink.add"]);
 
   const [url, setUrl] = React.useState("");
