@@ -25,6 +25,11 @@ export const shortLinkRouter = createRouter()
       const data = await ctx.prisma.shortLink.create({
         data: { slug: input.slug, url: input.url },
       });
-      return data;
+      const origin = ctx.req?.headers.origin;
+      if (!origin) {
+        console.log("No origin");
+      }
+      const fullUrl = `${origin}/r/${data.slug}`;
+      return { ...data, fullUrl };
     },
   });

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { ChangeEventHandler } from "react";
 import { trpc } from "../utils/trpc";
@@ -69,7 +70,16 @@ const Form = () => {
         {createSlugMutation.isLoading ? "Generating..." : "Generate"}
       </button>
       {createSlugMutation.isSuccess ? (
-        <div>Shortened: {createSlugMutation.data?.slug}</div>
+        <div className="text-lg">
+          Shortened:{" "}
+          <a
+            href={createSlugMutation.data?.fullUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {createSlugMutation.data?.fullUrl}
+          </a>
+        </div>
       ) : null}
     </main>
   );
