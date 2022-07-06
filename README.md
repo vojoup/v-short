@@ -4,7 +4,8 @@ This is an app bootstrapped according to the [init.tips](https://init.tips) stac
 
 # TODO
 
-- [ ] Add 404 page
-- [ ] Find if slug already taken
-- [ ] Github
-- [ ] Deploy
+- [ ] Show an error page when slug not found
+- [x] Find if slug already taken
+- [x] Github
+- [x] Deploy
+- [x] Dark theme
