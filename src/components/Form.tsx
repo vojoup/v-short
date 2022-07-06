@@ -72,13 +72,13 @@ const Form = () => {
       {createSlugMutation.isSuccess ? (
         <div className="text-lg">
           Shortened:{" "}
-          <Link
+          <a
             href={createSlugMutation.data?.fullUrl}
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
           >
             {createSlugMutation.data?.fullUrl}
-          </Link>
+          </a>
         </div>
       ) : null}
     </main>
